@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Play</title>
+    <style>
+        @font-face {
+            font-family: 'Press Start 2P';
+            src: url('https://fonts.gstatic.com/s/pressstart2p/v10/e3t4euO8mLvfortQA49KU3hAxkzJkDPp.woff2') format('woff2');
+        }
+
+        body {
+            background-color: #333333; /* Darker grey */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Press Start 2P', cursive;
+            transition: background-color 0.5s ease;
+        }
+
+        .container {
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .crafted-by {
+            color: lightpink; /* Same color as Let's Play */
+            font-size: 1.2em;
+            font-family: 'Courier New', Courier, monospace; /* Typewriter font */
+            margin-bottom: 20px;
+            text-align: center;
+            opacity: 0; /* Start hidden */
+            animation: fadeIn 1s ease-in-out 0s forwards; /* Immediate */
+        }
+
+        h1 {
+            color: lightpink;
+            font-size: 2em;
+            margin-bottom: 20px;
+            opacity: 0; /* Start hidden */
+            animation: fadeIn 1s ease-in-out 1s forwards; /* 1-second delay */
+        }
+
+        button.btn {
+            font-family: 'Press Start 2P', cursive;
+            color: lightpink;
+            background-color: #333333; /* Darker grey */
+            border: 2px solid lightpink;
+            border-radius: 10px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            opacity: 0; /* Start hidden */
+            animation: fadeIn 1s ease-in-out 2s forwards; /* 2-second delay */
+        }
+
+        button.btn:hover {
+            background-color: lightpink;
+            color: #333333; /* Darker grey */
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="crafted-by">Crafted by Taskin</div>
+        <h1>Let's Play</h1>
+        <button class="btn" onclick="playSound(); nextPage('countdown.html')">Alright, let's go then!</button>
+        <button class="btn" onclick="nextPage('goodbye.html')">Nah, I'm fine</button>
+    </div>
+    <div class="footer"></div>
+    <audio id="clickSound" src="https://www.soundjay.com/button/beep-07.wav"></audio>
+    <script>
+        function playSound() {
+            var sound = document.getElementById('clickSound');
+            sound.currentTime = 0; // Reset audio to the beginning
+            sound.play();
+        }
+
+        function nextPage(url) {
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
